@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rein & Frisch Köln GbR — Sauberkeit für Köln</title>
+<meta name="description" content="Rein & Frisch Köln GbR – professionelle Fensterreinigung in Köln. Zuverlässig, gründlich, fair.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;900&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --blue:#0B5FA5;
+    --blue-dark:#073A68;
+    --blue-ink:#07203A;
+    --green:#1B8A3E;
+    --green-deep:#12662C;
+    --paper:#F4F9FC;
+    --paper-alt:#E7F1FA;
+    --white:#FFFFFF;
+    --ink:#0A1F33;
+    --mist: rgba(255,255,255,.6);
+    --shadow: 0 20px 45px -20px rgba(7,32,58,.35);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:'Manrope',sans-serif;
+    color:var(--ink);
+    background:var(--paper);
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,.display{
+    font-family:'Archivo',sans-serif;
+    font-weight:900;
+    letter-spacing:-0.01em;
+    line-height:1.02;
+    margin:0;
+  }
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 28px;}
+  section{position:relative;}
+  ::selection{background:var(--green);color:#fff;}
+
+  /* ---------- NAV ---------- */
+  header.site{
+    position:sticky;top:0;z-index:80;
+    background:rgba(244,249,252,.86);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(11,95,165,.1);
+  }
+  .nav{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:14px 28px;max-width:1180px;margin:0 auto;
+  }
+  .brand{display:flex;align-items:center;gap:12px;}
+  .brand .mark{width:44px;height:44px;flex:none;}
+  .brand .name{font-family:'Archivo',sans-serif;font-weight:900;font-size:1.05rem;color:var(--blue-dark);line-height:1.05;}
+  .brand .name span{display:block;color:var(--green);font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;}
+  nav.links{display:flex;gap:28px;align-items:center;}
+  nav.links a{font-weight:700;font-size:.92rem;color:var(--blue-ink);position:relative;padding:6px 0;}
+  nav.links a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--green);transition:width .25s ease;}
+  nav.links a:hover::after{width:100%;}
+  .nav-cta{
+    background:var(--green);color:#fff;padding:10px 20px;border-radius:999px;
+    font-weight:800;font-size:.88rem;box-shadow:0 10px 20px -8px rgba(27,138,62,.55);
+    white-space:nowrap;
+  }
+  .burger{display:none;background:none;border:none;cursor:pointer;padding:6px;}
+  .burger span{display:block;width:26px;height:3px;background:var(--blue-dark);margin:5px 0;border-radius:2px;}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    padding:64px 0 40px;
+    background:
+      radial-gradient(1100px 500px at 85% -10%, rgba(11,95,165,.14), transparent 60%),
+      var(--paper);
+    overflow:hidden;
+  }
+  .hero-grid{
+    display:grid;grid-template-columns:1.05fr .95fr;gap:36px;align-items:center;
+  }
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--paper-alt);border:1px solid rgba(11,95,165,.18);
+    color:var(--blue-dark);font-weight:800;font-size:.78rem;letter-spacing:.12em;
+    text-transform:uppercase;padding:7px 14px;border-radius:999px;margin-bottom:20px;
+  }
+  .eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--green);}
+  .hero h1{
+    font-size:clamp(2.6rem, 6vw, 4.3rem);
+    color:var(--blue-dark);
+    text-transform:uppercase;
+  }
+  .hero h1 .accent{color:var(--green);display:block;}
+  .hero .sub{
+    margin-top:20px;font-size:1.15rem;font-weight:600;color:var(--blue-ink);
+    max-width:480px;
+  }
+  .hero .tagline{
+    margin-top:10px;color:#3a5670;font-size:1rem;max-width:480px;
+  }
+  .hero-ctas{display:flex;gap:14px;margin-top:32px;flex-wrap:wrap;}
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;
+    padding:15px 26px;border-radius:12px;font-weight:800;font-size:.98rem;
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn-primary{background:var(--green);color:#fff;box-shadow:0 14px 26px -10px rgba(27,138,62,.6);}
+  .btn-ghost{background:#fff;color:var(--blue-dark);border:2px solid rgba(11,95,165,.25);}
+  .btn-ghost:hover{border-color:var(--blue);}
+  .trust-row{
+    display:flex;gap:22px;margin-top:34px;flex-wrap:wrap;
+  }
+  .trust-row .item{display:flex;align-items:center;gap:8px;font-weight:700;font-size:.85rem;color:var(--blue-ink);}
+  .trust-row svg{width:18px;height:18px;color:var(--green);flex:none;}
+
+  /* signature: cathedral wipe */
+  .signature{
+    position:relative;aspect-ratio:1/1.05;border-radius:28px;overflow:hidden;
+    background:linear-gradient(160deg,#DCEAF6, #C9DFF0 55%, #B7D3EA);
+    box-shadow:var(--shadow);
+    border:1px solid rgba(255,255,255,.6);
+  }
+  .signature .droplets{position:absolute;inset:0;opacity:.5;}
+  .signature svg.city{position:absolute;left:0;right:0;bottom:0;width:100%;height:auto;}
+  .signature .clean-mask{
+    position:absolute;inset:0;
+    background:linear-gradient(160deg,#eef7fc, #dbeaf5 55%, #cfe4f2);
+    clip-path: inset(0 0 0 0);
+    animation: wipeReveal 3.2s ease-in-out 1 both;
+    animation-delay:.4s;
+  }
+  .signature .squeegee{
+    position:absolute;top:-6%;bottom:-6%;width:34px;
+    background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(10,31,51,.65) 8%, rgba(10,31,51,.9) 92%, rgba(255,255,255,.05));
+    border-radius:6px;
+    box-shadow: 8px 0 22px -6px rgba(0,0,0,.25);
+    left:2%;
+    animation: squeegeeMove 3.2s ease-in-out 1 both;
+    animation-delay:.4s;
+    z-index:5;
+  }
+  .signature .shine{
+    position:absolute;top:0;bottom:0;width:120px;left:-10%;
+    background:linear-gradient(100deg, transparent, rgba(255,255,255,.55), transparent);
+    animation: shineSweep 3.2s ease-in-out 1 both;
+    animation-delay:.4s;
+    mix-blend-mode:screen;
+    z-index:4;
+  }
+  @keyframes wipeReveal{
+    0%{clip-path: inset(0 0 0 0);}
+    100%{clip-path: inset(0 0 0 100%);}
+  }
+  @keyframes squeegeeMove{
+    0%{left:2%;}
+    100%{left:96%;}
+  }
+  @keyframes shineSweep{
+    0%{left:-10%;}
+    100%{left:110%;}
+  }
+  .signature .badge{
+    position:absolute;top:20px;right:20px;background:var(--white);
+    border-radius:14px;padding:12px 16px;box-shadow:var(--shadow);
+    font-family:'Archivo',sans-serif;font-weight:900;color:var(--blue-dark);
+    font-size:1.05rem;text-align:center;line-height:1.1;z-index:6;
+  }
+  .signature .badge span{display:block;font-family:'Manrope',sans-serif;font-weight:700;color:var(--green-deep);font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;margin-top:2px;}
+
+  @media (prefers-reduced-motion: reduce){
+    .signature .clean-mask, .signature .squeegee, .signature .shine{animation:none;clip-path:inset(0 0 0 100%);left:100%;}
+  }
+
+  /* ---------- SECTION HEADERS ---------- */
+  .section-head{max-width:640px;margin-bottom:44px;}
+  .section-head .kicker{
+    color:var(--green-deep);font-weight:800;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;
+    display:block;margin-bottom:10px;
+  }
+  .section-head h2{font-size:clamp(1.8rem,3.6vw,2.6rem);color:var(--blue-dark);}
+  .section-head p{margin-top:14px;color:#3a5670;font-size:1.02rem;line-height:1.6;}
+
+  /* ---------- SERVICES ---------- */
+  .services{padding:96px 0;background:var(--white);}
+  .service-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:26px;}
+  .service-grid-single{grid-template-columns:1fr;max-width:560px;margin:0 auto;}
+  .price-card{
+    background:var(--blue-ink);
+    color:#fff;border-radius:26px;padding:44px;position:relative;overflow:hidden;
+  }
+  .price-card::before{
+    content:"";position:absolute;right:-60px;top:-60px;width:220px;height:220px;border-radius:50%;
+    background:radial-gradient(circle,rgba(27,138,62,.5),transparent 70%);
+  }
+  .price-card .tag{
+    display:inline-block;background:var(--green);color:#fff;font-weight:800;font-size:.75rem;
+    letter-spacing:.1em;text-transform:uppercase;padding:6px 12px;border-radius:999px;margin-bottom:18px;
+  }
+  .price-card h3{font-size:1.9rem;color:#fff;margin-bottom:6px;}
+  .price-card .price{
+    display:flex;align-items:baseline;gap:10px;margin:22px 0 8px;
+  }
+  .price-card .price strong{font-family:'Archivo',sans-serif;font-weight:900;font-size:3.6rem;color:var(--green);line-height:1;}
+  .price-card .price small{font-size:1rem;color:#cfe0ee;font-weight:700;}
+  .price-card p.note{color:#cfe0ee;font-size:.95rem;max-width:380px;line-height:1.6;}
+  .price-card .btn{margin-top:26px;}
+
+  /* ---------- FEATURES ---------- */
+  .features{padding:90px 0;background:var(--paper);}
+  .feature-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;}
+  .feature{
+    background:#fff;border-radius:20px;padding:30px 24px;box-shadow:0 12px 30px -18px rgba(7,32,58,.25);
+    border:1px solid rgba(11,95,165,.08);
+    transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .feature:hover{transform:translateY(-6px);box-shadow:0 20px 36px -16px rgba(7,32,58,.3);}
+  .feature .icon{
+    width:52px;height:52px;border-radius:14px;background:var(--paper-alt);
+    display:flex;align-items:center;justify-content:center;margin-bottom:18px;color:var(--green);
+  }
+  .feature h3{font-size:1.05rem;color:var(--blue-dark);margin-bottom:8px;}
+  .feature p{margin:0;font-size:.92rem;color:#4b6580;line-height:1.5;}
+
+  /* ---------- ABOUT ---------- */
+  .about{padding:100px 0;background:var(--blue-ink);color:#fff;position:relative;overflow:hidden;}
+  .about::after{
+    content:"";position:absolute;inset:0;
+    background:radial-gradient(700px 380px at 15% 20%, rgba(27,138,62,.28), transparent 65%);
+  }
+  .about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center;position:relative;}
+  .about .kicker{color:#8fd6a5;}
+  .about h2{color:#fff;font-size:clamp(1.8rem,3.4vw,2.5rem);}
+  .about-quote{
+    font-family:'Archivo',sans-serif;font-weight:700;font-size:1.5rem;line-height:1.35;color:#fff;
+    border-left:4px solid var(--green);padding-left:22px;
+  }
+  .about-quote span{display:block;color:#9fc3de;font-family:'Manrope',sans-serif;font-weight:600;font-size:1rem;margin-top:14px;}
+  .stat-row{display:flex;gap:36px;margin-top:36px;flex-wrap:wrap;}
+  .stat{}
+  .stat strong{display:block;font-family:'Archivo',sans-serif;font-weight:900;font-size:2.2rem;color:var(--green);}
+  .stat small{color:#a9c6de;font-size:.85rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;}
+
+  /* ---------- TESTIMONIALS ---------- */
+  .testimonials{padding:100px 0;background:var(--paper);}
+  .review-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;}
+  .review-card{
+    background:#fff;border-radius:22px;padding:32px;border:1px solid rgba(11,95,165,.1);
+    box-shadow:0 14px 30px -20px rgba(7,32,58,.3);
+    display:flex;flex-direction:column;gap:14px;
+  }
+  .review-stars{display:flex;gap:4px;color:var(--green);}
+  .review-stars svg{width:18px;height:18px;}
+  .review-text{color:var(--blue-ink);font-size:1rem;line-height:1.6;margin:0;}
+  .review-author{display:flex;align-items:center;gap:12px;margin-top:auto;padding-top:6px;}
+  .review-avatar{
+    width:42px;height:42px;border-radius:50%;background:var(--paper-alt);
+    display:flex;align-items:center;justify-content:center;font-family:'Archivo',sans-serif;
+    font-weight:900;color:var(--blue-dark);flex:none;
+  }
+  .review-author .who strong{display:block;font-size:.92rem;color:var(--blue-dark);}
+  .review-author .who span{display:block;font-size:.78rem;color:#5b7590;}
+
+  /* ---------- CONTACT ---------- */
+  .contact{padding:100px 0;background:var(--white);}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;}
+  .contact-card{
+    background:var(--paper);border-radius:26px;padding:40px;border:1px solid rgba(11,95,165,.1);
+  }
+  .contact-card h3{color:var(--blue-dark);font-size:1.4rem;margin-bottom:20px;}
+  .contact-row{display:flex;align-items:center;gap:16px;margin-bottom:18px;}
+  .contact-row .ic{
+    width:46px;height:46px;border-radius:12px;background:var(--green);color:#fff;flex:none;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .contact-row a{font-weight:800;color:var(--blue-ink);font-size:1.02rem;}
+  .contact-row .lbl{display:block;font-size:.76rem;color:#5b7590;font-weight:700;text-transform:uppercase;letter-spacing:.08em;}
+  .contact-note{margin-top:22px;font-size:.9rem;color:#5b7590;line-height:1.6;}
+
+  form.quote{background:var(--blue-ink);border-radius:26px;padding:40px;color:#fff;}
+  form.quote h3{color:#fff;font-size:1.4rem;margin-bottom:6px;}
+  form.quote p{color:#a9c6de;font-size:.9rem;margin:0 0 22px;}
+  .field{margin-bottom:16px;}
+  .field label{display:block;font-size:.78rem;font-weight:700;color:#a9c6de;text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px;}
+  .field input, .field textarea, .field select{
+    width:100%;padding:12px 14px;border-radius:10px;border:1px solid rgba(255,255,255,.18);
+    background:rgba(255,255,255,.06);color:#fff;font-family:'Manrope',sans-serif;font-size:.95rem;
+  }
+  .field input::placeholder, .field textarea::placeholder{color:rgba(255,255,255,.4);}
+  .field textarea{resize:vertical;min-height:90px;}
+  .row-2{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  form.quote .btn-primary{width:100%;justify-content:center;margin-top:6px;border:none;cursor:pointer;font-size:1rem;}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--blue-dark);color:#cfe0ee;padding:56px 0 26px;}
+  .footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:36px;margin-bottom:40px;}
+  .footer-brand{display:flex;align-items:center;gap:12px;margin-bottom:14px;}
+  .footer-brand .mark{width:38px;height:38px;}
+  .footer-brand .name{font-family:'Archivo',sans-serif;font-weight:900;color:#fff;font-size:1rem;}
+  footer .script{font-style:italic;font-weight:700;color:#8fd6a5;font-size:1.05rem;max-width:280px;line-height:1.4;}
+  footer h4{color:#fff;font-size:.85rem;text-transform:uppercase;letter-spacing:.08em;margin-bottom:14px;}
+  footer ul{list-style:none;padding:0;margin:0;}
+  footer li{margin-bottom:10px;font-size:.92rem;}
+  footer a:hover{color:#fff;}
+  .footer-bottom{
+    border-top:1px solid rgba(255,255,255,.12);padding-top:22px;
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:.8rem;color:#8fa9c2;
+  }
+
+  /* ---------- IMPRESSUM MODAL ---------- */
+  #impressum-panel, #datenschutz-panel{
+    display:none;position:fixed;inset:0;background:rgba(7,32,58,.6);z-index:200;
+    align-items:center;justify-content:center;padding:24px;
+  }
+  #impressum-panel.open, #datenschutz-panel.open{display:flex;}
+  .imp-box{
+    background:#fff;max-width:520px;width:100%;border-radius:20px;padding:36px;position:relative;
+    max-height:80vh;overflow:auto;
+  }
+  .imp-box h3{color:var(--blue-dark);margin-bottom:14px;}
+  .imp-box p{font-size:.92rem;line-height:1.7;color:#3a5670;margin:0 0 10px;}
+  .imp-close{position:absolute;top:16px;right:16px;background:var(--paper-alt);border:none;width:34px;height:34px;border-radius:50%;font-size:1rem;cursor:pointer;color:var(--blue-dark);}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 980px){
+    nav.links{display:none;}
+    .burger{display:block;}
+    .hero-grid{grid-template-columns:1fr;}
+    .signature{order:-1;max-width:420px;margin:0 auto 20px;}
+    .service-grid{grid-template-columns:1fr;}
+    .feature-grid{grid-template-columns:1fr 1fr;}
+    .about-grid{grid-template-columns:1fr;}
+    .contact-grid{grid-template-columns:1fr;}
+    .review-grid{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr;}
+  }
+  @media (max-width: 560px){
+    .feature-grid{grid-template-columns:1fr;}
+    .row-2{grid-template-columns:1fr;}
+    .trust-row{gap:14px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="nav">
+    <a href="#top" class="brand">
+      <svg class="mark" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="#EAF3FA"/>
+        <path d="M14 34c6-14 22-18 34-10" stroke="#0B5FA5" stroke-width="4" stroke-linecap="round" fill="none"/>
+        <path d="M12 42c8-8 26-10 36-2" stroke="#0B5FA5" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.55"/>
+        <path d="M40 46c-4 4-12 5-17-1 5 1 9-1 10-6 4 1 8 3 7 7z" fill="#1B8A3E"/>
+        <rect x="27" y="16" width="6" height="24" rx="2" fill="#07203A" transform="rotate(28 30 28)"/>
+      </svg>
+      <span class="name">Rein &amp; Frisch<span>Köln GbR</span></span>
+    </a>
+    <nav class="links">
+      <a href="#leistungen">Leistungen</a>
+      <a href="#bewertungen">Bewertungen</a>
+      <a href="#warum-wir">Warum wir</a>
+      <a href="#kontakt">Kontakt</a>
+      <a href="tel:+4915736385977" class="nav-cta">+49 1573 6385977</a>
+    </nav>
+    <button class="burger" aria-label="Menü öffnen" onclick="document.querySelector('.links').classList.toggle('mobile-open')">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">Reinigungsservice · Köln &amp; Umgebung</span>
+        <h1>Sauberkeit<span class="accent">für Köln!</span></h1>
+        <p class="sub">Zuverlässig. Gründlich. Fair.</p>
+        <p class="tagline">Sauberkeit, die man sieht. Service, der überzeugt. Wir reinigen Fenster in ganz Köln – termintreu und mit Auge fürs Detail.</p>
+        <div class="hero-ctas">
+          <a href="tel:+4915736385977" class="btn btn-primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.8.6.6 0 1 .5 1 1.1v3.7c0 .6-.4 1-1 1C10.4 21.3 2.7 13.6 2.7 3.7c0-.6.4-1 1-1h3.7c.6 0 1.1.4 1.1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1.1L6.6 10.8z" fill="currentColor"/></svg>
+            Jetzt anrufen
+          </a>
+          <a href="#kontakt" class="btn btn-ghost">Kostenlos anfragen</a>
+        </div>
+        <div class="trust-row">
+          <div class="item"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1 3-6z" fill="currentColor"/></svg>Pünktlich &amp; vertrauenswürdig</div>
+          <div class="item"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Transparente, faire Preise</div>
+          <div class="item"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2c4 4 7 8 7 12a7 7 0 11-14 0c0-4 3-8 7-12z" fill="currentColor"/></svg>Umweltbewusst &amp; schonend</div>
+        </div>
+      </div>
+
+      <div class="signature">
+        <svg class="city" viewBox="0 0 420 260" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0" y="150" width="420" height="110" fill="#8fb9d6" opacity="0.35"/>
+          <path d="M40 260 L40 90 L52 90 L52 70 L60 70 L60 55 L70 55 L70 40 L80 40 L80 30 L90 40 L90 55 L100 55 L100 70 L108 70 L108 90 L120 90 L120 260 Z" fill="#0B5FA5" opacity="0.85"/>
+          <path d="M150 260 L150 100 L160 100 L160 80 L168 80 L168 65 L176 65 L176 50 L184 40 L192 50 L192 65 L200 65 L200 80 L208 80 L208 100 L218 100 L218 260 Z" fill="#073A68"/>
+          <rect x="230" y="150" width="140" height="110" fill="#0B5FA5" opacity="0.5"/>
+          <g stroke="#073A68" stroke-width="3" opacity="0.4">
+            <line x1="40" y1="230" x2="378" y2="230"/>
+            <line x1="40" y1="180" x2="40" y2="230"/>
+            <line x1="378" y1="180" x2="378" y2="230"/>
+            <path d="M40 205 Q209 165 378 205" fill="none"/>
+          </g>
+        </svg>
+        <div class="clean-mask"></div>
+        <div class="squeegee"></div>
+        <div class="shine"></div>
+        <div class="badge">3,50 €<span>pro m² Fenster</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="leistungen">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">Unsere Leistung</span>
+        <h2>Fensterreinigung zum fairen Festpreis</h2>
+        <p>Wir konzentrieren uns auf das, was wir am besten können: streifenfreie Fensterreinigung für Privathaushalte und Gewerbe in ganz Köln.</p>
+      </div>
+      <div class="service-grid service-grid-single">
+        <div class="price-card">
+          <span class="tag">Unsere Spezialität</span>
+          <h3>Fensterreinigung</h3>
+          <p class="note">Streifenfrei und gründlich – innen und außen, für Privathaushalte und Gewerbe in ganz Köln.</p>
+          <div class="price"><strong>3,50 €</strong><small>pro m²</small></div>
+          <a href="#kontakt" class="btn btn-primary">Termin anfragen</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features" id="warum-wir">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">Warum Rein &amp; Frisch</span>
+        <h2>Vier Gründe, uns Ihre Sauberkeit anzuvertrauen</h2>
+      </div>
+      <div class="feature-grid">
+        <div class="feature">
+          <div class="icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h3>Zuverlässig</h3>
+          <p>Pünktlich &amp; vertrauenswürdig – Sie können sich auf jeden Termin verlassen.</p>
+        </div>
+        <div class="feature">
+          <div class="icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 2l2.2 5.8L20 10l-5.8 2.2L12 18l-2.2-5.8L4 10l5.8-2.2L12 2z" fill="currentColor"/></svg></div>
+          <h3>Gründlich</h3>
+          <p>Sauberkeit bis ins Detail – wir schauen genau hin, wo andere aufhören.</p>
+        </div>
+        <div class="feature">
+          <div class="icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M6 14c2-1 4-1 6 0s4 1 6 0M2 10h20M4 10l1-5h14l1 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
+          <h3>Faire Preise</h3>
+          <p>Transparente Preise &amp; verhandelbar – keine versteckten Kosten.</p>
+        </div>
+        <div class="feature">
+          <div class="icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 2c4 4 7 8 7 12a7 7 0 11-14 0c0-4 3-8 7-12z" fill="currentColor"/></svg></div>
+          <h3>Nachhaltig</h3>
+          <p>Umweltbewusst &amp; schonend – für Ihre Räume und die Umwelt.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about">
+    <div class="wrap about-grid">
+      <div>
+        <span class="kicker" style="display:block;font-weight:800;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:10px;">Über uns</span>
+        <h2>Ein Kölner Team für ein reines Zuhause</h2>
+        <div class="stat-row">
+          <div class="stat"><strong>3,50 €</strong><small>pro m² Fenster</small></div>
+          <div class="stat"><strong>100%</strong><small>Kölner Team</small></div>
+          <div class="stat"><strong>GbR</strong><small>Rein &amp; Frisch Köln</small></div>
+        </div>
+      </div>
+      <blockquote class="about-quote">
+        „Sauberkeit, die man sieht. Service, der überzeugt.“
+        <span>Unser Anspruch bei jeder Fensterreinigung in Köln – streifenfrei, zuverlässig, zum fairen Preis.</span>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials" id="bewertungen">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">Bewertungen</span>
+        <h2>Das sagen Kundinnen und Kunden in Köln</h2>
+        <p>Ein paar Rückmeldungen zu unserer Fensterreinigung – gerne freuen wir uns über weitere Bewertungen von Ihnen.</p>
+      </div>
+      <div class="review-grid">
+        <div class="review-card">
+          <div class="review-stars">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1 3-6z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1 3-6z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1 3-6z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1 3-6z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1 3-6z"/></svg>
+          </div>
+          <p class="review-text">„Termin war pünktlich, die Fenster danach wirklich streifenfrei – sogar die Rahmen wurden mitgereinigt. Sehr freundlich und aufgeräumt gearbeitet.“</p>
+          <div class="review-author">
+            <div class="review-avatar">S</div>
+            <div class="who"><strong>Sabine K.</strong><span>Köln-Ehrenfeld</span></div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1 3-6z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1 3-6z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1 3-6z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1 3-6z"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1 3-6z"/></svg>
+          </div>
+          <p class="review-text">„Faire Preise und unkomplizierte Terminvereinbarung per WhatsApp. Für unser Büro in der Innenstadt genau der richtige Ansprechpartner.“</p>
+          <div class="review-author">
+            <div class="review-avatar">T</div>
+            <div class="who"><strong>Thomas R.</strong><span>Köln-Innenstadt</span></div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1 3-6z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1 3-6z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1 3-6z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1 3-6z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1 3-6z"/></svg>
+          </div>
+          <p class="review-text">„Endlich jemand, der auch die hohen Fenster im Altbau ohne Probleme sauber bekommt. Ergebnis top, Preis wie besprochen.“</p>
+          <div class="review-author">
+            <div class="review-avatar">M</div>
+            <div class="who"><strong>Melike A.</strong><span>Köln-Nippes</span></div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1 3-6z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1 3-6z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1 3-6z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1 3-6z"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1 3-6z"/></svg>
+          </div>
+          <p class="review-text">„Schnelle Antwort auf meine Anfrage, klare Preisangabe pro Quadratmeter und zuverlässig zum vereinbarten Termin erschienen. Gerne wieder.“</p>
+          <div class="review-author">
+            <div class="review-avatar">D</div>
+            <div class="who"><strong>David L.</strong><span>Köln-Sülz</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="kontakt">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">Kontakt</span>
+        <h2>Kontaktiere uns</h2>
+        <p>Rufen Sie an, schreiben Sie eine E-Mail oder nutzen Sie das Formular – wir melden uns schnellstmöglich mit einem fairen Angebot.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h3>Direkt erreichbar</h3>
+          <div class="contact-row">
+            <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.8.6.6 0 1 .5 1 1.1v3.7c0 .6-.4 1-1 1C10.4 21.3 2.7 13.6 2.7 3.7c0-.6.4-1 1-1h3.7c.6 0 1.1.4 1.1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1.1L6.6 10.8z" fill="#fff"/></svg></div>
+            <div><span class="lbl">Telefon</span><a href="tel:+4915736385977">+49 1573 6385977</a></div>
+          </div>
+          <div class="contact-row">
+            <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M3 6h18v12H3V6zm0 0l9 7 9-7" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
+            <div><span class="lbl">E-Mail</span><a href="mailto:rein.frisch.koeln@gmail.com">rein.frisch.koeln@gmail.com</a></div>
+          </div>
+          <div class="contact-row">
+            <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 21s7-6.5 7-12a7 7 0 10-14 0c0 5.5 7 12 7 12z" stroke="#fff" stroke-width="2" fill="none"/><circle cx="12" cy="9" r="2.5" fill="#fff"/></svg></div>
+            <div><span class="lbl">Einsatzgebiet</span><a href="#">Köln &amp; Umgebung</a></div>
+          </div>
+          <p class="contact-note">Als Kleinunternehmen (§19 UStG) weisen wir auf unseren Rechnungen keine Umsatzsteuer aus.</p>
+        </div>
+
+        <form class="quote" action="mailto:rein.frisch.koeln@gmail.com" method="post" enctype="text/plain">
+          <h3>Angebot anfragen</h3>
+          <p>Kurz ausfüllen – wir melden uns telefonisch oder per E-Mail.</p>
+          <div class="row-2">
+            <div class="field"><label for="name">Name</label><input id="name" name="Name" type="text" placeholder="Ihr Name" required></div>
+            <div class="field"><label for="phone">Telefon</label><input id="phone" name="Telefon" type="tel" placeholder="Ihre Nummer"></div>
+          </div>
+          <div class="field"><label for="mail">E-Mail</label><input id="mail" name="E-Mail" type="email" placeholder="ihre@email.de" required></div>
+          <div class="field"><label for="msg">Nachricht</label><textarea id="msg" name="Nachricht" placeholder="z. B. Quadratmeter, Adresse, Wunschtermin …"></textarea></div>
+          <button type="submit" class="btn btn-primary">Anfrage senden</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <svg class="mark" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="32" cy="32" r="30" fill="#0B5FA5"/>
+            <path d="M14 34c6-14 22-18 34-10" stroke="#fff" stroke-width="4" stroke-linecap="round" fill="none" opacity="0.9"/>
+            <path d="M40 46c-4 4-12 5-17-1 5 1 9-1 10-6 4 1 8 3 7 7z" fill="#1B8A3E"/>
+          </svg>
+          <span class="name">Rein &amp; Frisch Köln GbR</span>
+        </div>
+        <p class="script">„Wir bringen Glanz in deinen Alltag!“</p>
+      </div>
+      <div>
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="#leistungen">Leistungen</a></li>
+          <li><a href="#warum-wir">Warum wir</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Kontakt</h4>
+        <ul>
+          <li><a href="tel:+4915736385977">+49 1573 6385977</a></li>
+          <li><a href="mailto:rein.frisch.koeln@gmail.com">rein.frisch.koeln@gmail.com</a></li>
+          <li><a href="#" onclick="document.getElementById('impressum-panel').classList.add('open');return false;">Impressum</a></li>
+          <li><a href="#" onclick="document.getElementById('datenschutz-panel').classList.add('open');return false;">Datenschutzerklärung</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Rein &amp; Frisch Köln GbR — Alle Rechte vorbehalten.</span>
+      <span>Kleinunternehmer gem. §19 UStG</span>
+    </div>
+  </div>
+</footer>
+
+<div id="impressum-panel">
+  <div class="imp-box">
+    <button class="imp-close" onclick="document.getElementById('impressum-panel').classList.remove('open')">✕</button>
+    <h3>Impressum</h3>
+    <p><strong>Rein &amp; Frisch Köln GbR</strong><br>
+    [Straße &amp; Hausnummer einfügen]<br>
+    [PLZ &amp; Köln]</p>
+    <p><strong>Vertreten durch:</strong> [Namen der Gesellschafter einfügen]</p>
+    <p><strong>Kontakt:</strong> Telefon: +49 1573 6385977<br>E-Mail: rein.frisch.koeln@gmail.com</p>
+    <p>Kleinunternehmer im Sinne von §19 Abs. 1 UStG – keine Umsatzsteuer wird ausgewiesen.</p>
+    <p style="font-size:.8rem;color:#8a9fb2;">Hinweis: Dieses Impressum ist ein Platzhalter und muss vor Veröffentlichung um Anschrift und Gesellschafternamen ergänzt werden (Pflichtangaben nach §5 TMG).</p>
+  </div>
+</div>
+
+<div id="datenschutz-panel">
+  <div class="imp-box">
+    <button class="imp-close" onclick="closeDatenschutz()">✕</button>
+    <h3>Datenschutzerklärung</h3>
+    <p><strong>1. Verantwortlicher</strong><br>
+    Rein &amp; Frisch Köln GbR<br>
+    [Straße &amp; Hausnummer einfügen], [PLZ] Köln<br>
+    E-Mail: rein.frisch.koeln@gmail.com · Telefon: +49 1573 6385977</p>
+
+    <p><strong>2. Erhebung und Verarbeitung von Daten</strong><br>
+    Wenn Sie unser Kontakt- bzw. Anfrageformular nutzen, verarbeiten wir die von Ihnen freiwillig angegebenen Daten (z. B. Name, Telefonnummer, E-Mail-Adresse, Nachricht), um Ihre Anfrage zu bearbeiten und Ihnen ein Angebot zu erstellen. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (vorvertragliche Maßnahmen).</p>
+
+    <p><strong>3. Hosting &amp; Server-Logfiles</strong><br>
+    Beim Aufruf dieser Website können durch den Hosting-Anbieter automatisch technische Informationen (z. B. IP-Adresse, Datum/Uhrzeit, aufgerufene Seite, Browsertyp) in Server-Logfiles gespeichert werden. Dies dient der Sicherstellung eines störungsfreien Betriebs (Art. 6 Abs. 1 lit. f DSGVO).</p>
+
+    <p><strong>4. Weitergabe an Dritte</strong><br>
+    Eine Weitergabe Ihrer Daten an Dritte erfolgt nicht, außer wenn dies zur Bearbeitung Ihrer Anfrage notwendig ist (z. B. E-Mail-Versand über unseren Anbieter) oder wir gesetzlich dazu verpflichtet sind.</p>
+
+    <p><strong>5. Speicherdauer</strong><br>
+    Wir speichern personenbezogene Daten nur so lange, wie es für die Bearbeitung Ihrer Anfrage oder zur Erfüllung gesetzlicher Aufbewahrungspflichten erforderlich ist.</p>
+
+    <p><strong>6. Ihre Rechte</strong><br>
+    Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit sowie Widerspruch gegen die Verarbeitung Ihrer Daten. Wenden Sie sich hierzu an die oben genannte Kontaktadresse. Zudem steht Ihnen ein Beschwerderecht bei einer Datenschutz-Aufsichtsbehörde zu.</p>
+
+    <p><strong>7. Cookies</strong><br>
+    Diese Website verwendet keine Analyse- oder Marketing-Cookies. Es werden ausschließlich technisch notwendige Daten verarbeitet.</p>
+
+    <p style="font-size:.8rem;color:#8a9fb2;">Hinweis: Dies ist eine allgemeine Vorlage und ersetzt keine Rechtsberatung. Bitte vor Veröffentlichung durch eine fachkundige Stelle (z. B. Anwalt für IT-Recht) prüfen und um fehlende Angaben (Anschrift, ggf. eingesetzte Dienstleister/Tools) ergänzen lassen.</p>
+    <button class="btn btn-primary" style="margin-top:8px;width:100%;justify-content:center;border:none;cursor:pointer;" onclick="closeDatenschutz()">Verstanden</button>
+  </div>
+</div>
+
+<script>
+  // simple mobile nav toggle style injection
+  const style = document.createElement('style');
+  style.textContent = `
+    @media (max-width:980px){
+      nav.links.mobile-open{
+        display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;
+        background:#fff;padding:20px 28px;gap:16px;box-shadow:0 20px 30px -18px rgba(7,32,58,.3);
+      }
+    }
+  `;
+  document.head.appendChild(style);
+
+  function closeDatenschutz(){
+    document.getElementById('datenschutz-panel').classList.remove('open');
+  }
+  window.addEventListener('load', function(){
+    document.getElementById('datenschutz-panel').classList.add('open');
+  });
+</script>
+
+</body>
+</html>
