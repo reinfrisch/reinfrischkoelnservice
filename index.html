@@ -587,17 +587,23 @@
           <p class="contact-note">Als Kleinunternehmen (§19 UStG) weisen wir auf unseren Rechnungen keine Umsatzsteuer aus.</p>
         </div>
 
-        <form class="quote" action="mailto:rein.frisch.koeln@gmail.com" method="post" enctype="text/plain">
-          <h3>Angebot anfragen</h3>
-          <p>Kurz ausfüllen – wir melden uns telefonisch oder per E-Mail.</p>
-          <div class="row-2">
-            <div class="field"><label for="name">Name</label><input id="name" name="Name" type="text" placeholder="Ihr Name" required></div>
-            <div class="field"><label for="phone">Telefon</label><input id="phone" name="Telefon" type="tel" placeholder="Ihre Nummer"></div>
-          </div>
-          <div class="field"><label for="mail">E-Mail</label><input id="mail" name="E-Mail" type="email" placeholder="ihre@email.de" required></div>
-          <div class="field"><label for="msg">Nachricht</label><textarea id="msg" name="Nachricht" placeholder="z. B. Quadratmeter, Adresse, Wunschtermin …"></textarea></div>
-          <button type="submit" class="btn btn-primary">Anfrage senden</button>
-        </form>
+   <form class="quote" action="https://api.web3forms.com/submit" method="POST">
+    <!-- Hier ist Ihr persönlicher Web3Forms-Schlüssel bereits eingetragen -->
+    <input type="hidden" name="access_key" value="d4d37040-947d-4b91-b21e-133b56074893">
+    
+    <h3>Angebot anfragen</h3>
+    <p>Kurz ausfüllen – wir melden uns telefonisch oder per E-Mail.</p>
+    
+    <div class="row-2">
+        <div class="field"><label for="name">Name</label><input id="name" name="Name" type="text" placeholder="Ihr Name" required></div>
+        <div class="field"><label for="phone">Telefon</label><input id="phone" name="Telefon" type="tel" placeholder="Ihre Nummer"></div>
+    </div>
+    
+    <div class="field"><label for="mail">E-Mail</label><input id="mail" name="E-Mail" type="email" placeholder="ihre@email.de" required></div>
+    <div class="field"><label for="msg">Nachricht</label><textarea id="msg" name="Nachricht" placeholder="z. B. Quadratmeter, Adresse..."></textarea></div>
+    
+    <button type="submit" class="btn btn-primary">Anfrage senden</button>
+</form>
       </div>
     </div>
   </section>
