@@ -57,7 +57,13 @@
     padding:14px 28px;max-width:1180px;margin:0 auto;
   }
   .brand{display:flex;align-items:center;gap:12px;}
-  .brand .mark{width:44px;height:44px;flex:none;}
+  .brand .mark{
+    width:44px;
+    height:44px;
+    flex:none;
+    border-radius:50%;
+    object-fit:cover;
+}
   .brand .name{font-family:'Archivo',sans-serif;font-weight:900;font-size:1.05rem;color:var(--blue-dark);line-height:1.05;}
   .brand .name span{display:block;color:var(--green);font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;}
   nav.links{display:flex;gap:28px;align-items:center;}
@@ -350,16 +356,13 @@
 
 <header class="site">
   <div class="nav">
-    <a href="#top" class="brand">
-      <svg class="mark" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="32" cy="32" r="30" fill="#EAF3FA"/>
-        <path d="M14 34c6-14 22-18 34-10" stroke="#0B5FA5" stroke-width="4" stroke-linecap="round" fill="none"/>
-        <path d="M12 42c8-8 26-10 36-2" stroke="#0B5FA5" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.55"/>
-        <path d="M40 46c-4 4-12 5-17-1 5 1 9-1 10-6 4 1 8 3 7 7z" fill="#1B8A3E"/>
-        <rect x="27" y="16" width="6" height="24" rx="2" fill="#07203A" transform="rotate(28 30 28)"/>
-      </svg>
-      <span class="name">Rein &amp; Frisch<span>Köln Service GbR</span></span>
-    </a>
+   <a href="#top" class="brand">
+    <img src="logo.png" alt="Rein & Frisch Logo" class="mark">
+    <span class="name">
+        Rein &amp; Frisch
+        <span>Köln Service GbR</span>
+    </span>
+</a>
     <nav class="links">
       <a href="#leistungen">Leistungen</a>
       <a href="#bewertungen">Bewertungen</a>
